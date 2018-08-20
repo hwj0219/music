@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+
+            $('.title').click(function(){
+                $(this).next().slideDown();
+            });
+
+            $('.music-list li').click(function(){
+                $(this).parent().slideUp();
+
+                    var title = $(this).text();
+                $(this).parent().prev().text(title);
+                    var eq = $(this).index();
+                $('.cd_box').removeClass('border');
+                $('.cd_box').eq(eq).addClass('border');
+            });
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            font-size: 100%;
+            font-weight: normal;
+        }
+        
+        .wrapper {
+            width: 1200px;
+            margin: 0 auto;
+            background:#f7bdd0;
+            border-radius: 100px;
+            padding: 50px;
+        }
+
+        .cd {
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            justify-content: space-around;
+        }
+
+        .cd_box {
+            width: 200px;
+            height: 200px;
+            border-radius: 500px;
+            box-sizing: border-box;
+            border: 3px solid #f7bdd0;
+        }
+
+        .cd_box:first-child {
+            background: url(images/cd01.jpg) no-repeat center;
+            background-size: 200%;
+            background-position: -110px -50px;
+        }
+        .cd_box:nth-child(2) {
+            background: url(images/cd02.jpg) no-repeat center;
+            background-size: 200%;
+            background-position: -100px 0px;
+        }
+        .cd_box:last-child {
+            background: url(images/cd03.jpg) no-repeat center;
+            background-size: 180%;
+            background-position: -90px -5px;
+        }
+        
+        .title {
+            padding: 20px 120px;
+            width: 1200px;
+            border-radius: 100px;
+            background: #FFF url(images/play.png) no-repeat;
+            background-position: 15px 0;
+            background-size: contain;
+            font-size: 24px;
+            box-sizing: border-box;
+            cursor: pointer;
+            margin-top: 50px;
+        }
+
+        .music-list {
+            display: none;
+            cursor: pointer;
+            padding-left: 120px;
+            font-size: 24px;
+            line-height: 40px;
+            color: #333333;
+        }
+
+        .music-list li:hover {
+            color: #AAA;
+        }
+
+        .border {
+            border: 3px solid #FFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="cd">
+            <div class="cd_box">
+            </div>
+            <div class="cd_box">
+            </div>
+            <div class="cd_box">
+            </div>
+        </div>
+        <div class="select-music">
+            <h1 class="title">Now Playing</h1>
+            <ul class="music-list">
+                <li>가을 아침</li>
+                <li>봄 사랑 벚꽃 말고</li>
+                <li>팔레트</li>
+            </ul>
+        </div>
+    </div>
+    <!--Start of Tawk.to Script-->
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5b7a706dafc2c34e96e7b877/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>
